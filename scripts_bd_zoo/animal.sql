@@ -1,0 +1,15 @@
+create table animal(
+id char(5) not null,
+nombre varchar(50) not null,
+edad integer not null,
+genero varchar(50) not null,
+clave_pais char(5) not null,
+nombre_cientifico_raza varchar(50) not null,
+detalle_clasificacion varchar(500) not null,
+dieta varchar(1000) not null,
+cuidados_especiales varchar(2000) not null,
+id_recinto char(5) not null,
+constraint animal_fk1 foreign key (clave_pais) references pais(clave),
+constraint animal_fk2 foreign key (nombre_cientifico_raza) references raza(nombre_cientifico),
+constraint animal_fk3 foreign key (id_recinto) references recinto(id),
+constraint animal_pk primary key (id))
